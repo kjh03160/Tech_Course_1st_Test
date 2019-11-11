@@ -5,7 +5,13 @@ def solution(prices, discounts):
     discounts.sort(reverse = True)
 
     i = 0
-    while i < len(discounts):
+    length = 0
+    if len(prices) >= len(discounts):
+        length = len(discounts)
+    else:
+        length = len(prices)
+        
+    while i < length:
         answer += prices[i] * ((100 - discounts[i]) / 100)
         i += 1
 
